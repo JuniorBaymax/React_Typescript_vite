@@ -9,6 +9,7 @@ const config = {
   mode: 'light',
   presetColor: 'default',
   themeDirection: 'ltr',
+  borderRadius: '',
 };
 
 export default config;

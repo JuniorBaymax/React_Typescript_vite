@@ -4,7 +4,7 @@ import * as actionTypes from './actions';
 interface CustomizationState {
   isOpen: string[];
   fontFamily: string;
-  borderRadius: number;
+  borderRadius: string;
   opened: boolean;
 }
 

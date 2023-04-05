@@ -1,25 +1,24 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { duration } from "moment";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 // type
 type SnackarState = {
   snackbarOpen: boolean;
-  snackbarType: "success" | "error" | "info" | "warning";
+  snackbarType: 'success' | 'error' | 'info' | 'warning';
   snackbarMessage: string;
   // duration: number;
 };
 const initialState: SnackarState = {
   snackbarOpen: false,
-  snackbarType: "success",
-  snackbarMessage: "",
+  snackbarType: 'success',
+  snackbarMessage: '',
   // duration: 3000,
 };
 
 const snackbarSlice = createSlice({
-  name: "snackbar",
+  name: 'snackbar',
   initialState,
   reducers: {
-    setSnackbar: (state: any, { payload }: PayloadAction<SnackarState>) => {
+    setSnackbar: (_state: any, { payload }: PayloadAction<SnackarState>) => {
       return {
         snackbarOpen: payload?.snackbarOpen,
         snackbarType: payload?.snackbarType,
