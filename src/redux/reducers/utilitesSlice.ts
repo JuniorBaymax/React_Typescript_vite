@@ -41,13 +41,13 @@ const utilisSlice = createSlice({
   name: 'utils',
   initialState,
   reducers: {
-    updatePayload: (state: any, { payload }: PayloadAction<string>) => {
+    updatePayload: (state: any) => {
       state.payloadUpdater = generateRandomId();
     },
-    updateSparePayload: (state: any, { payload }: PayloadAction<string>) => {
+    updateSparePayload: (state: any) => {
       state.sparePayloadUpdater = generateRandomId();
     },
-    clearPayload: (state: any, { payload }: PayloadAction<string>) => {
+    clearPayload: (state: any) => {
       state.payloadUpdater = '';
     },
     shareProps: (state: any, { payload }: PayloadAction<utilState>) => {
