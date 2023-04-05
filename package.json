@@ -2,7 +2,7 @@
   "name": "vite-react-ts-eslint-prettier",
   "private": false,
   "version": "1.0.0",
-  "homepage": "https://juniorbaymax.github.io/React_Typescript_vite/",
+  "homepage": "https://juniorbaymax.github.io/React_Typescript_vite/react_typescript_vite/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
