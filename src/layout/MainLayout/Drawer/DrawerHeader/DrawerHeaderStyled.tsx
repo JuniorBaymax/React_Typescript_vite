@@ -1,5 +1,5 @@
 // material-ui
-import { styled, Theme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
 
 // prop types
@@ -15,7 +15,7 @@ const DrawerHeaderStyled = styled(Box, {
   ...theme.mixins.toolbar,
   display: 'flex',
   alignItems: 'center',
-  justifyContent: open ? 'flex-end' : 'center',
+  justifyContent: open ? 'center' : 'flex-end',
   paddingLeft: theme.spacing(open ? 3 : 0),
 }));
 

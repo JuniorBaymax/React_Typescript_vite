@@ -1,12 +1,10 @@
 // material-ui
-import { Box, Chip, Grid, Stack, Typography } from '@mui/material';
+import { Box, Grid, Stack, Typography } from '@mui/material';
 
 // project import
 import MainCard from '~/components/MainCard';
 
 // assets
-import { RiseOutlined, FallOutlined } from '@ant-design/icons';
-import { ReactNode } from 'react';
 
 // ==============================|| STATISTICS - ECOMMERCE CARD  ||============================== //
 interface AnalyticEcommerceProps {
@@ -18,14 +16,7 @@ interface AnalyticEcommerceProps {
   extra?: string;
 }
 
-const AnalyticEcommerce = ({
-  color,
-  title,
-  count,
-  percentage,
-  isLoss,
-  extra,
-}: AnalyticEcommerceProps) => (
+const AnalyticEcommerce = ({ color, title, count, percentage, extra }: AnalyticEcommerceProps) => (
   <MainCard contentSX={{ p: 2.25 }}>
     <Stack spacing={0.5}>
       <Typography variant='h6' color='textSecondary'>

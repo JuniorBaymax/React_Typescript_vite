@@ -1,4 +1,4 @@
-import { ReactNode, forwardRef, useEffect } from 'react';
+import { forwardRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -49,7 +49,7 @@ const NavItem = ({ item, level }: NavItemProps) => {
   }
 
   let listItemProps: { [key: string]: any } = {
-    component: forwardRef((props, ref) => (
+    component: forwardRef((props, _ref) => (
       <Link {...props} to={item.url} target={itemTarget} />
       //   TODO: ref={ref} Have to Add ref in Link if does not work
     )),

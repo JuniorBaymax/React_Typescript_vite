@@ -8,7 +8,6 @@ import './index.css';
 import { ReactQueryProvider } from './provider';
 import { store } from './redux/store';
 import { BrowserRouter } from 'react-router-dom';
-import reportWebVitals from './reportWebVitals';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
