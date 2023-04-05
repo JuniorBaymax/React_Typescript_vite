@@ -9,8 +9,8 @@ import { Box, Toolbar, useMediaQuery } from '@mui/material';
 // project import
 import Drawer from './Drawer';
 import Header from './Header';
-import navigation from '~/menu-items';
-import Breadcrumbs from '~/components/@extended/Breadcrumbs';
+// import navigation from '~/menu-items';
+// import Breadcrumbs from '~/components/@extended/Breadcrumbs';
 import { openDrawer } from '~/redux/reducers/menuSlice';
 import { RootState } from '~/redux/store';
 

@@ -1,4 +1,4 @@
-import { Suspense, ReactNode } from 'react';
+import { Suspense } from 'react';
 
 // project import
 import Loader from './Loader';

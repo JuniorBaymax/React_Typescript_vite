@@ -47,7 +47,7 @@ const Header: FunctionComponent<HeaderProps> = ({ open, handleDrawerToggle }) =>
   );
 
   // app-bar params
-  const appBar = {
+  const appBar: any = {
     position: 'fixed',
     color: 'inherit',
     elevation: 0,

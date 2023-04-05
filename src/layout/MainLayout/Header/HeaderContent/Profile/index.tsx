@@ -75,7 +75,7 @@ const Profile = () => {
 
   const [value, setValue] = useState(0);
 
-  const handleChange = (event: React.SyntheticEvent<any>, newValue: number) => {
+  const handleChange = (_event: React.SyntheticEvent<any>, newValue: number) => {
     setValue(newValue);
   };
 

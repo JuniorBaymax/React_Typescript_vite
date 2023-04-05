@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import { Stack, Chip } from '@mui/material';
@@ -10,7 +8,7 @@ import Logo from '~/components/Logo';
 
 // ==============================|| DRAWER HEADER ||============================== //
 
-const DrawerHeader: React.FC = ({ open }: any) => {
+const DrawerHeader: React.FC<any> = ({ open }: any) => {
   const theme = useTheme();
 
   return (
