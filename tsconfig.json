@@ -1,40 +1,87 @@
 {
   "compilerOptions": {
+    /* Specify the version of ECMAScript to target */
     "target": "ESNext",
+
+    /* Enable usage of define keyword for class fields */
     "useDefineForClassFields": true,
+
+    /* Specify the libraries to include */
     "lib": ["DOM", "DOM.Iterable", "ESNext", "es5", "es6"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
+
+    /* Specify the module system */
     "module": "ESNext",
-    "moduleResolution": "Node",
+
+    /* Skip type-checking of library files */
+    "skipLibCheck": true,
+
+    /* Bundler Mode */
+
+    /* Specify the module resolution strategy */
+    "moduleResolution": "bundler",
+
+    /* Allow importing of TypeScript modules using the ".ts" extension */
+    "allowImportingTsExtensions": true,
+
+    /* Enable resolution of JSON modules */
     "resolveJsonModule": true,
+
+    /* Treat each file as a separate module */
     "isolatedModules": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+
+    /* Enable interoperability with CommonJS and AMD modules */
+    "esModuleInterop": true,
+
+    /* Do not emit compiled output */
     "noEmit": true,
-    "jsx": "preserve",
+
+    /* Specify the JSX factory function */
+    "jsx": "react-jsx",
+
+    /* Linting */
+
+    /* Enable strict mode */
+    "strict": true,
+
+    /* Report unused local variables */
+    "noUnusedLocals": true,
+
+    /* Ignore unused function parameters */
+    "noUnusedParameters": false, // Unused variables will be ignored
+
+    /* Report missing cases in switch statements */
+    "noFallthroughCasesInSwitch": true,
+
+    /* Allow synthetic default imports */
+    "allowSyntheticDefaultImports": true,
+
+    /* Enforce consistent casing in filenames */
+    "forceConsistentCasingInFileNames": true,
+
+    /* Emit metadata for decorated declarations */
+    "emitDecoratorMetadata": true,
+
+    /* Enable experimental decorator support */
+    "experimentalDecorators": true,
+
+    /* Enable incremental compilation */
     "incremental": true,
+
+    /* Specify the base URL for module resolution */
     "baseUrl": ".",
+
+    /* Specify path mappings for module resolution */
     "paths": {
       "~/*": ["src/*"]
     }
   },
-  "include": [
-    "vite.config.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.jsx",
-    "src/themes/typography.ts",
-    "src/themes/palette.ts",
-    "src/themes/index.ts"
-  ],
+
+  /* Include files and directories for compilation */
+  "include": ["src", "vite.config.ts", "**/*.ts", "**/*.tsx"],
+
+  /* Specify a reference to another tsconfig file */
+  "references": [{ "path": "./tsconfig.node.json" }],
+
+  /* Exclude files and directories from compilation */
   "exclude": ["node_modules"]
 }
