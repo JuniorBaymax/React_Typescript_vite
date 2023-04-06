@@ -1,4 +1,8 @@
 image: node:16.5.0
+on:
+  push:
+    branches:
+      - push
 pages:
   stage: deploy
   cache:
