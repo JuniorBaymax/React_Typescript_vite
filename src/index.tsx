@@ -8,7 +8,7 @@ import './index.css';
 import { ReactQueryProvider } from './provider';
 import { store } from './redux/store';
 import { BrowserRouter } from 'react-router-dom';
-
+// Checking Pre-list commit stagging
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
