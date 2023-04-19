@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 //type defination
 type messageState = {
@@ -7,11 +7,11 @@ type messageState = {
 
 //initial values
 const initialState: messageState = {
-  message: "",
+  message: '',
 };
 
 const messageSlice = createSlice({
-  name: "message",
+  name: 'message',
   initialState,
   reducers: {
     setMessage: (state: any, { payload }: PayloadAction<messageState>) => {

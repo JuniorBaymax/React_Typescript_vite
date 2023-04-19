@@ -39,8 +39,8 @@ export default function ThemeCustomization({ children }: ThemeCustomizationProps
       };
     };
     palette: any;
-    customShadows: {};
-    typography: {};
+    customShadows: any;
+    typography: any;
   };
   const themeOptions = useMemo<ThemeOptions>(
     () => ({

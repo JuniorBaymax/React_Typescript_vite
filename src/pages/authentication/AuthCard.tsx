@@ -8,7 +8,7 @@ import { ReactNode } from 'react';
 // ==============================|| AUTHENTICATION - CARD WRAPPER ||============================== //
 type AuthCardProps = {
   children?: ReactNode;
-  other?: {};
+  other?: any;
 };
 
 const AuthCard = ({ children, ...other }: AuthCardProps) => (
