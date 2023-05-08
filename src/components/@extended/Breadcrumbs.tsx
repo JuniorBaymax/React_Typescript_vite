@@ -33,7 +33,7 @@ const Breadcrumbs: FC<BreadcrumbsProps & MainCardProps> = ({
   // set active item state
   const getCollapse = (menu: NavigationItem) => {
     if (menu.children) {
-      menu.children.filter((collapse) => {
+      menu.children.filter(collapse => {
         if (collapse.type && collapse.type === 'collapse') {
           getCollapse(collapse);
         } else if (collapse.type && collapse.type === 'item') {
@@ -48,7 +48,7 @@ const Breadcrumbs: FC<BreadcrumbsProps & MainCardProps> = ({
   };
 
   useEffect(() => {
-    navigation?.items?.map((menu) => {
+    navigation?.items?.map(menu => {
       if (menu.type && menu.type === 'group') {
         getCollapse(menu);
       }

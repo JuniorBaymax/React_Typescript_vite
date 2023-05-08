@@ -136,7 +136,7 @@ const AuthLogin = () => {
                     control={
                       <Checkbox
                         checked={checked}
-                        onChange={(event) => setChecked(event.target.checked)}
+                        onChange={event => setChecked(event.target.checked)}
                         name='checked'
                         color='primary'
                         size='small'

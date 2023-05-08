@@ -215,10 +215,10 @@ const DashboardDefault = () => {
               size='small'
               select
               value={value}
-              onChange={(e) => setValue(e.target.value)}
+              onChange={e => setValue(e.target.value)}
               sx={{ '& .MuiInputBase-input': { py: 0.5, fontSize: '0.875rem' } }}
             >
-              {status.map((option) => (
+              {status.map(option => (
                 <MenuItem key={option.value} value={option.value}>
                   {option.label}
                 </MenuItem>

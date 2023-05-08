@@ -29,7 +29,7 @@ const closedMixin = (theme: any) => ({
 
 // ==============================|| DRAWER - MINI STYLED ||============================== //
 
-const MiniDrawerStyled = styled(Drawer, { shouldForwardProp: (prop) => prop !== 'open' })<any>(
+const MiniDrawerStyled = styled(Drawer, { shouldForwardProp: prop => prop !== 'open' })<any>(
   ({ theme, open }) => ({
     width: drawerWidth,
     flexShrink: 0,
@@ -43,7 +43,7 @@ const MiniDrawerStyled = styled(Drawer, { shouldForwardProp: (prop) => prop !== 
       ...closedMixin(theme),
       '& .MuiDrawer-paper': closedMixin(theme),
     }),
-  }),
+  })
 );
 
 export default MiniDrawerStyled;

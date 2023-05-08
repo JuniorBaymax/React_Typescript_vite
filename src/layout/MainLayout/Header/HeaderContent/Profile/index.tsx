@@ -63,7 +63,7 @@ const Profile = () => {
   const [open, setOpen] = useState(false);
 
   const handleToggle = () => {
-    setOpen((prevOpen) => !prevOpen);
+    setOpen(prevOpen => !prevOpen);
   };
 
   const handleClose = (event: any) => {

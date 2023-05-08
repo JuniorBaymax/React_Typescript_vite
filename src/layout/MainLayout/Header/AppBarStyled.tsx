@@ -26,7 +26,7 @@ const AppBarStyled = styled(AppBar, { shouldForwardProp: (prop: any) => prop !==
         duration: theme.transitions.duration.enteringScreen,
       }),
     }),
-  }),
+  })
 );
 
 export default AppBarStyled;
