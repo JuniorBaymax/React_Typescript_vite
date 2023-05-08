@@ -1,6 +1,7 @@
 import config from '../constant';
 import * as actionTypes from './actions';
 
+// Define the type for the state of the 'customization' reducer
 interface CustomizationState {
   isOpen: string[];
   fontFamily: string;
@@ -8,6 +9,7 @@ interface CustomizationState {
   opened: boolean;
 }
 
+// Define the initial state for the 'customization' reducer
 export const initialState: CustomizationState = {
   isOpen: [],
   fontFamily: config.fontFamily,
@@ -15,8 +17,7 @@ export const initialState: CustomizationState = {
   opened: true,
 };
 
-// ==============================|| CUSTOMIZATION REDUCER ||============================== //
-
+// Define the 'customizationReducer' function, which handles the state updates for the 'customization' reducer
 const customizationReducer = (state: CustomizationState = initialState, action: any) => {
   let id: string;
   switch (action.type) {
@@ -46,4 +47,5 @@ const customizationReducer = (state: CustomizationState = initialState, action: 
   }
 };
 
+// Export the 'customizationReducer' as the default export of this module
 export default customizationReducer;
