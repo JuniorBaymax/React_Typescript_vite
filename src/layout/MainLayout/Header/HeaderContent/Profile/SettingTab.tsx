@@ -30,7 +30,7 @@ const SettingTab = () => {
     >
       <ListItemButton
         selected={selectedIndex === 0}
-        onClick={(event) => handleListItemClick(event, 0)}
+        onClick={event => handleListItemClick(event, 0)}
       >
         <ListItemIcon>
           <QuestionCircleOutlined />
@@ -39,7 +39,7 @@ const SettingTab = () => {
       </ListItemButton>
       <ListItemButton
         selected={selectedIndex === 1}
-        onClick={(event) => handleListItemClick(event, 1)}
+        onClick={event => handleListItemClick(event, 1)}
       >
         <ListItemIcon>
           <UserOutlined />
@@ -48,7 +48,7 @@ const SettingTab = () => {
       </ListItemButton>
       <ListItemButton
         selected={selectedIndex === 2}
-        onClick={(event) => handleListItemClick(event, 2)}
+        onClick={event => handleListItemClick(event, 2)}
       >
         <ListItemIcon>
           <LockOutlined />
@@ -57,7 +57,7 @@ const SettingTab = () => {
       </ListItemButton>
       <ListItemButton
         selected={selectedIndex === 3}
-        onClick={(event) => handleListItemClick(event, 3)}
+        onClick={event => handleListItemClick(event, 3)}
       >
         <ListItemIcon>
           <CommentOutlined />
@@ -66,7 +66,7 @@ const SettingTab = () => {
       </ListItemButton>
       <ListItemButton
         selected={selectedIndex === 4}
-        onClick={(event) => handleListItemClick(event, 4)}
+        onClick={event => handleListItemClick(event, 4)}
       >
         <ListItemIcon>
           <UnorderedListOutlined />

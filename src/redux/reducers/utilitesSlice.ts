@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import generateRandomId from '~/utils/generateRandomId';
 
-// type defination
-type utilState = {
+// Define the type for the state of the 'utils' slice
+type UtilState = {
   orderId: string;
   orderStatus: string;
   spare_id: string;
@@ -19,7 +19,9 @@ type utilState = {
   };
   ticketOnHold: number;
 };
-const initialState: utilState = {
+
+// Define the initial state for the 'utils' slice
+const initialState: UtilState = {
   orderId: '',
   orderStatus: '',
   spare_id: '',
@@ -37,34 +39,42 @@ const initialState: utilState = {
   ticketOnHold: 0,
 };
 
-const utilisSlice = createSlice({
-  name: 'utils',
-  initialState,
+// Create a slice using the createSlice function from Redux Toolkit
+const utilsSlice = createSlice({
+  name: 'utils', // Name of the slice
+  initialState, // Initial state for the slice
   reducers: {
-    updatePayload: (state: any) => {
-      state.payloadUpdater = generateRandomId();
+    // Define the 'updatePayload' reducer
+    updatePayload: (state: UtilState) => {
+      state.payloadUpdater = generateRandomId(); // Update the 'payloadUpdater' property of the state with a random ID generated using the 'generateRandomId' utility function
     },
-    updateSparePayload: (state: any) => {
-      state.sparePayloadUpdater = generateRandomId();
+    // Define the 'updateSparePayload' reducer
+    updateSparePayload: (state: UtilState) => {
+      state.sparePayloadUpdater = generateRandomId(); // Update the 'sparePayloadUpdater' property of the state with a random ID generated using the 'generateRandomId' utility function
     },
-    clearPayload: (state: any) => {
-      state.payloadUpdater = '';
+    // Define the 'clearPayload' reducer
+    clearPayload: (state: UtilState) => {
+      state.payloadUpdater = ''; // Clear the 'payloadUpdater' property of the state
     },
-    shareProps: (state: any, { payload }: PayloadAction<utilState>) => {
-      state.orderId = payload.orderId;
-      state.orderStatus = payload.orderStatus;
+    // Define the 'shareProps' reducer
+    shareProps: (state: UtilState, { payload }: PayloadAction<UtilState>) => {
+      state.orderId = payload.orderId; // Update the 'orderId' property of the state with the payload value
+      state.orderStatus = payload.orderStatus; // Update the 'orderStatus' property of the state with the payload value
     },
-    shareSlaProps: (state: utilState, { payload }: PayloadAction<utilState>) => {
-      state.currentDay = payload.currentDay;
-      state.serviceWindow = payload.serviceWindow;
-      state.slaDuration = payload.slaDuration;
-      state.ticketOnHold = payload.ticketOnHold;
+    // Define the 'shareSlaProps' reducer
+    shareSlaProps: (state: UtilState, { payload }: PayloadAction<UtilState>) => {
+      state.currentDay = payload.currentDay; // Update the 'currentDay' property of the state with the payload value
+      state.serviceWindow = payload.serviceWindow; // Update the 'serviceWindow' property of the state with the payload value
+      state.slaDuration = payload.slaDuration; // Update the 'slaDuration' property of the state with the payload value
+      state.ticketOnHold = payload.ticketOnHold; // Update the 'ticketOnHold' property of the state with the payload value
     },
   },
 });
 
-const { reducer, actions } = utilisSlice;
+// Extract the reducer and actions from the utilsSlice
+const { reducer, actions } = utilsSlice;
 
+// Extract the 'updatePayload', 'clearPayload', 'updateSparePayload', 'shareProps', and 'shareSlaProps' actions from the utilsSlice actions
 export const { updatePayload, clearPayload, updateSparePayload, shareProps, shareSlaProps } =
   actions;
 export default reducer;

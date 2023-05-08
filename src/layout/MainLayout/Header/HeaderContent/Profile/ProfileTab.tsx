@@ -33,7 +33,7 @@ const ProfileTab = ({ handleLogout }: ProfileTabProps) => {
     >
       <ListItemButton
         selected={selectedIndex === 0}
-        onClick={(event) => handleListItemClick(event, 0)}
+        onClick={event => handleListItemClick(event, 0)}
       >
         <ListItemIcon>
           <EditOutlined />
@@ -42,7 +42,7 @@ const ProfileTab = ({ handleLogout }: ProfileTabProps) => {
       </ListItemButton>
       <ListItemButton
         selected={selectedIndex === 1}
-        onClick={(event) => handleListItemClick(event, 1)}
+        onClick={event => handleListItemClick(event, 1)}
       >
         <ListItemIcon>
           <UserOutlined />
@@ -52,7 +52,7 @@ const ProfileTab = ({ handleLogout }: ProfileTabProps) => {
 
       <ListItemButton
         selected={selectedIndex === 3}
-        onClick={(event) => handleListItemClick(event, 3)}
+        onClick={event => handleListItemClick(event, 3)}
       >
         <ListItemIcon>
           <ProfileOutlined />
@@ -61,7 +61,7 @@ const ProfileTab = ({ handleLogout }: ProfileTabProps) => {
       </ListItemButton>
       <ListItemButton
         selected={selectedIndex === 4}
-        onClick={(event) => handleListItemClick(event, 4)}
+        onClick={event => handleListItemClick(event, 4)}
       >
         <ListItemIcon>
           <WalletOutlined />

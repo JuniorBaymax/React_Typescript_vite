@@ -62,7 +62,7 @@ const Transitions = forwardRef(
         )}
       </Box>
     );
-  },
+  }
 );
 
 export default Transitions;

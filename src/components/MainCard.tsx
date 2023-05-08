@@ -50,7 +50,7 @@ const MainCard = forwardRef<HTMLDivElement, MainCardProps>(
       codeHighlight,
       ...others
     },
-    ref,
+    ref
   ) => {
     const theme = useTheme<any>();
     boxShadow = theme.palette.mode === 'dark' ? boxShadow || true : boxShadow;
@@ -116,7 +116,7 @@ const MainCard = forwardRef<HTMLDivElement, MainCardProps>(
         )}
       </Card>
     );
-  },
+  }
 );
 
 export default MainCard;

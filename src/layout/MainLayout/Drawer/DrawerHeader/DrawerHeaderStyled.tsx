@@ -10,7 +10,7 @@ interface DrawerHeaderProps {
 // ==============================|| DRAWER HEADER - STYLED ||============================== //
 
 const DrawerHeaderStyled = styled(Box, {
-  shouldForwardProp: (prop) => prop !== 'open',
+  shouldForwardProp: prop => prop !== 'open',
 })<DrawerHeaderProps>(({ theme, open }) => ({
   ...theme.mixins.toolbar,
   display: 'flex',

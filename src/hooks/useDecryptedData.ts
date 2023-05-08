@@ -1,5 +1,6 @@
 import { decryptData } from '~/utils/encrypt';
 
+// Define the interface `DecryptedData` to specify the shape of the decrypted data object
 interface DecryptedData {
   userId: number | undefined;
   userName: string | undefined;
@@ -12,18 +13,24 @@ interface DecryptedData {
   refreshToken: string | undefined;
 }
 
+// Define a custom hook `useDecryptedData` that returns the decrypted data
 export const useDecryptedData = (): DecryptedData => {
-  const encryptedLocalStorageData = localStorage.getItem('Ukqt');
-  const decryptUserEmail = localStorage.getItem('query');
+  const encryptedLocalStorageData = localStorage.getItem('Ukqt'); // Retrieve the encrypted data from localStorage
+  const decryptUserEmail = localStorage.getItem('query'); // Retrieve the encrypted user email from localStorage
 
+  // Get the salt value from the environment variables
   // eslint-disable-next-line no-undef
   const salt = `${process.env.SALT}`;
 
+  // Decrypt the encryptedLocalStorageData using the decryptData function
   const decryptedUserData = encryptedLocalStorageData
     ? decryptData(encryptedLocalStorageData, salt)
     : null;
+
+  // Decrypt the decryptUserEmail using the decryptData function
   const decrypt_user_email = decryptUserEmail ? decryptData(decryptUserEmail, salt) : null;
 
+  // Return the decrypted data as an object
   return {
     userId: decryptedUserData?.user_id || decryptedUserData?.userId,
     userName: decryptedUserData?.user_name || decryptedUserData?.userName,
