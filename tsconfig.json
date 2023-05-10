@@ -77,7 +77,16 @@
   },
 
   /* Include files and directories for compilation */
-  "include": ["src", "vite.config.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "src/*",
+    "vite.config.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/cypress.config.ts",
+    "src/cypress.config.js",
+    "cypress/config/cypress.config.js",
+    "cypress/tsconfig.json"
+  ],
 
   /* Specify a reference to another tsconfig file */
   "references": [{ "path": "./tsconfig.node.json" }],
