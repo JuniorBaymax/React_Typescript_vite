@@ -36,6 +36,8 @@
     "react/display-name": "off",
     "react/prop-types": "off",
 
+    "cypress/no-unnecessary-waiting": "off",
+    "cypress/unsafe-to-chain-command": "off",
     "prettier/prettier": [
       "warn",
       {
@@ -44,7 +46,6 @@
         "semi": true,
         "singleQuote": true,
         "jsxSingleQuote": true,
-        "jsxBracketSameLine": false,
         "arrowParens": "avoid",
         "printWidth": 100,
         "endOfLine": "auto"
