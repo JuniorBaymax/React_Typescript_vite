@@ -19,7 +19,7 @@
     "tsc:check-app": "tsc --noEmit --project \"./tsconfig.json\"",
     "tsc:check-cypress": "tsc --noEmit --project \"./cypress/tsconfig.json\"",
     "configure-husky": "npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\"",
-    "test:e2e": "cypress run --headed --config-file \"./cypress/config/cypress.config.js\""
+    "test:e2e": "cypress run --headed --config-file \"./cypress.config.ts\""
   },
   "husky": {
     "hooks": {

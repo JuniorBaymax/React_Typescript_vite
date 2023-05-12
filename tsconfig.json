@@ -18,10 +18,10 @@
     /* Bundler Mode */
 
     /* Specify the module resolution strategy */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
 
     /* Allow importing of TypeScript modules using the ".ts" extension */
-    "allowImportingTsExtensions": true,
+    // "allowImportingTsExtensions": true,
 
     /* Enable resolution of JSON modules */
     "resolveJsonModule": true,
@@ -83,9 +83,9 @@
     "**/*.ts",
     "**/*.tsx",
     "src/cypress.config.ts",
-    "src/cypress.config.js",
-    "cypress/config/cypress.config.js",
-    "cypress/tsconfig.json"
+    "cypress/tsconfig.json",
+    "cypress.config.ts",
+    "../node_modules/cypress/"
   ],
 
   /* Specify a reference to another tsconfig file */
