@@ -47,13 +47,13 @@ const AuthLogin = () => {
     <>
       <Formik
         initialValues={{
-          email: 'info@codedthemes.com',
-          password: '123456',
+          email: '',
+          password: '',
           submit: null,
         }}
         validationSchema={Yup.object().shape({
           email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-          password: Yup.string().max(255).required('Password is required'),
+          password: Yup.string().min(2).max(10).required('Password is required'),
         })}
         onSubmit={async (_values, { setErrors, setStatus, setSubmitting }) => {
           try {
@@ -96,7 +96,7 @@ const AuthLogin = () => {
                   <OutlinedInput
                     fullWidth
                     error={Boolean(touched.password && errors.password)}
-                    id='-password-login'
+                    id='password-login'
                     type={showPassword ? 'text' : 'password'}
                     value={values.password}
                     name='password'
