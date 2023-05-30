@@ -31,7 +31,7 @@ const ProfileTab = ({ handleLogout }: ProfileTabProps) => {
       component='nav'
       sx={{ p: 0, '& .MuiListItemIcon-root': { minWidth: 32, color: theme.palette.grey[500] } }}
     >
-      <ListItemButton
+      {/* <ListItemButton
         selected={selectedIndex === 0}
         onClick={event => handleListItemClick(event, 0)}
       >
@@ -39,7 +39,7 @@ const ProfileTab = ({ handleLogout }: ProfileTabProps) => {
           <EditOutlined />
         </ListItemIcon>
         <ListItemText primary='Edit Profile' />
-      </ListItemButton>
+      </ListItemButton> */}
       <ListItemButton
         selected={selectedIndex === 1}
         onClick={event => handleListItemClick(event, 1)}
@@ -50,24 +50,6 @@ const ProfileTab = ({ handleLogout }: ProfileTabProps) => {
         <ListItemText primary='View Profile' />
       </ListItemButton>
 
-      <ListItemButton
-        selected={selectedIndex === 3}
-        onClick={event => handleListItemClick(event, 3)}
-      >
-        <ListItemIcon>
-          <ProfileOutlined />
-        </ListItemIcon>
-        <ListItemText primary='Social Profile' />
-      </ListItemButton>
-      <ListItemButton
-        selected={selectedIndex === 4}
-        onClick={event => handleListItemClick(event, 4)}
-      >
-        <ListItemIcon>
-          <WalletOutlined />
-        </ListItemIcon>
-        <ListItemText primary='Billing' />
-      </ListItemButton>
       <ListItemButton selected={selectedIndex === 2} onClick={handleLogout}>
         <ListItemIcon>
           <LogoutOutlined />

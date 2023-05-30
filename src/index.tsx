@@ -5,7 +5,7 @@ import App from './App';
 
 // styles
 import './index.css';
-import { ReactQueryProvider } from './provider';
+import { ReactQueryProvider } from './queries';
 import { store } from './redux/store';
 import { BrowserRouter } from 'react-router-dom';
 // Checking Pre-list commit stagging
