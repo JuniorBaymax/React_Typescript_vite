@@ -1,5 +1,5 @@
 import React, { SyntheticEvent } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
 // material-ui
 import {
@@ -28,13 +28,18 @@ import AnimateButton from '~/components/@extended/AnimateButton';
 
 // assets
 import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
+import { LoginCredentials } from '~/api/authApi';
+import { useLogin } from '~/queries/authQueries';
+import { useDispatch } from 'react-redux';
 
 // ============================|| FIREBASE - LOGIN ||============================ //
 
 const AuthLogin = () => {
   const [checked, setChecked] = React.useState(false);
-
   const [showPassword, setShowPassword] = React.useState(false);
+  const dispatch = useDispatch();
+  const loginMutation = useLogin();
+  const navigate = useNavigate();
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -43,6 +48,17 @@ const AuthLogin = () => {
     event.preventDefault();
   };
 
+  console.log(loginMutation);
+
+  const handleLogin = async (credentials: LoginCredentials) => {
+    try {
+      const status = await loginMutation.mutateAsync(credentials);
+      // Login successful, perform any necessary actions
+      navigate('/dashboard');
+    } catch (error) {
+      // Handle login error
+    }
+  };
   return (
     <>
       <Formik
@@ -55,16 +71,7 @@ const AuthLogin = () => {
           email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
           password: Yup.string().min(2).max(10).required('Password is required'),
         })}
-        onSubmit={async (_values, { setErrors, setStatus, setSubmitting }) => {
-          try {
-            setStatus({ success: false });
-            setSubmitting(false);
-          } catch (err: any) {
-            setStatus({ success: false });
-            setErrors({ submit: err.message });
-            setSubmitting(false);
-          }
-        }}
+        onSubmit={handleLogin}
       >
         {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
           <form noValidate onSubmit={handleSubmit}>

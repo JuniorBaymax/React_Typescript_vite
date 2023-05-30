@@ -21,6 +21,7 @@ import ProfileTab from './ProfileTab';
 import SettingTab from './SettingTab';
 import avatar1 from '~/assets/images/users/avatar-1.png';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 
 interface TabPanelProps {
   children: React.ReactNode;
@@ -54,9 +55,11 @@ function a11yProps(index: number) {
 
 const Profile = () => {
   const theme = useTheme<any>();
+  const navigate = useNavigate();
 
   const handleLogout = async () => {
     // logout
+    navigate('/login');
   };
 
   const anchorRef = useRef<HTMLButtonElement>(null);
@@ -147,7 +150,7 @@ const Profile = () => {
                             <Stack>
                               <Typography variant='h6'>John Doe</Typography>
                               <Typography variant='body2' color='textSecondary'>
-                                UI/UX Designer
+                                Designation
                               </Typography>
                             </Stack>
                           </Stack>
