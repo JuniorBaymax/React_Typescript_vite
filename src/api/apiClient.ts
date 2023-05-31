@@ -7,6 +7,11 @@ import axios, {
 
 const apiClient: AxiosInstance = axios.create({
   baseURL: 'https://teamsproject.teamcomputers.com/wsbackend/v1/',
+  headers: {
+    'Content-type': 'application/json',
+    businessUnit: 'EUS,MPS',
+    'auth-token': localStorage.getItem('token'),
+  },
 });
 
 apiClient.interceptors.request.use(
