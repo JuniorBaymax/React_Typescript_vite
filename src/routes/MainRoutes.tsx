@@ -4,8 +4,7 @@ import { lazy } from 'react';
 import Loadable from '~/components/Loadable';
 import MainLayout from '~/layout/MainLayout';
 import ProtectedRoute from './ProtectedRoute';
-import PageNotFound from '~/pages/NotFound';
-import Lists from '~/pages/Lists/Index';
+import MinimalLayout from '~/layout/MinimalLayout';
 
 // render - dashboard
 const DashboardDefault = Loadable(lazy(() => import('~/pages/dashboard')));
@@ -18,7 +17,7 @@ const Typography = Loadable(lazy(() => import('~/pages/components-overview/Typog
 const Color = Loadable(lazy(() => import('~/pages/components-overview/Color')));
 const Shadow = Loadable(lazy(() => import('~/pages/components-overview/Shadow')));
 const AntIcons = Loadable(lazy(() => import('~/pages/components-overview/AntIcons')));
-
+const Status404 = Loadable(lazy(() => import('~/pages/Status404')));
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
@@ -53,13 +52,15 @@ const MainRoutes = {
           path: 'icons/ant',
           element: <AntIcons />,
         },
-        {
-          path: 'manage/list',
-          element: <Lists />,
-        },
+      ],
+    },
+    {
+      path: '/*',
+      element: <MinimalLayout />,
+      children: [
         {
           path: '*',
-          element: <PageNotFound />,
+          element: <Status404 />,
         },
       ],
     },

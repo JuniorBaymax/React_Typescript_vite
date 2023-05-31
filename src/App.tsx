@@ -2,7 +2,6 @@
 import Routes from '~/routes';
 import ThemeCustomization from '~/themes';
 import ScrollTop from '~/components/ScrollTop';
-import CustomLoader from './components/CustomLoader';
 import AuthProvider from './context/AuthProvider';
 
 // ==============================|| APP - THEME, ROUTER, LOCAL  ||============================== //
@@ -13,7 +12,7 @@ const App = () => (
       <AuthProvider>
         <Routes />
       </AuthProvider>
-      <CustomLoader />
+      {/* <CustomLoader /> */}
     </ScrollTop>
   </ThemeCustomization>
 );
