@@ -35,7 +35,7 @@ export default defineConfig({
     sourcemap: true,
   },
   server: {
-    port: 3000,
+    port: 5000,
     open: true,
     https: false,
     proxy: {
@@ -43,7 +43,7 @@ export default defineConfig({
         target: 'https://example.com',
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: path => path.replace(/^\/api/, ''),
       },
     },
     hmr: {
