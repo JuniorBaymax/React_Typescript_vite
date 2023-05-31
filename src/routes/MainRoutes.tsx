@@ -3,7 +3,9 @@ import { lazy } from 'react';
 // project import
 import Loadable from '~/components/Loadable';
 import MainLayout from '~/layout/MainLayout';
-import PrivateRoute from './PrivateRoutes';
+import ProtectedRoute from './ProtectedRoute';
+import PageNotFound from '~/pages/NotFound';
+import Lists from '~/pages/Lists/Index';
 
 // render - dashboard
 const DashboardDefault = Loadable(lazy(() => import('~/pages/dashboard')));
@@ -20,41 +22,46 @@ const AntIcons = Loadable(lazy(() => import('~/pages/components-overview/AntIcon
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
-  path: '/',
-  element: <MainLayout />,
+  path: '',
+  element: <ProtectedRoute />,
   children: [
     {
       path: '/',
-      element: <DashboardDefault />,
-    },
-    {
-      path: 'color',
-      element: <Color />,
-    },
-    {
-      path: 'dashboard',
+      element: <MainLayout />,
       children: [
         {
-          path: 'default',
+          path: 'color',
+          element: <Color />,
+        },
+        {
+          path: 'dashboard',
           element: <DashboardDefault />,
         },
+        {
+          path: 'sample-page',
+          element: <SamplePage />,
+        },
+        {
+          path: 'shadow',
+          element: <Shadow />,
+        },
+        {
+          path: 'typography',
+          element: <Typography />,
+        },
+        {
+          path: 'icons/ant',
+          element: <AntIcons />,
+        },
+        {
+          path: 'manage/list',
+          element: <Lists />,
+        },
+        {
+          path: '*',
+          element: <PageNotFound />,
+        },
       ],
-    },
-    {
-      path: 'sample-page',
-      element: <SamplePage />,
-    },
-    {
-      path: 'shadow',
-      element: <Shadow />,
-    },
-    {
-      path: 'typography',
-      element: <Typography />,
-    },
-    {
-      path: 'icons/ant',
-      element: <AntIcons />,
     },
   ],
 };
