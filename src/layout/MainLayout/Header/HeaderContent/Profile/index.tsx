@@ -22,6 +22,7 @@ import SettingTab from './SettingTab';
 import avatar1 from '~/assets/images/users/avatar-1.png';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '~/context/AuthProvider';
 
 interface TabPanelProps {
   children: React.ReactNode;
@@ -56,9 +57,10 @@ function a11yProps(index: number) {
 const Profile = () => {
   const theme = useTheme<any>();
   const navigate = useNavigate();
-
+  const { setToken } = useAuth();
   const handleLogout = async () => {
     // logout
+    setToken(null);
     navigate('/login');
   };
 

@@ -31,6 +31,7 @@ import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 import { LoginCredentials } from '~/api/authApi';
 import { useLogin } from '~/queries/authQueries';
 import { useDispatch } from 'react-redux';
+import { useAuth } from '~/context/AuthProvider';
 
 // ============================|| FIREBASE - LOGIN ||============================ //
 
@@ -40,6 +41,7 @@ const AuthLogin = () => {
   const dispatch = useDispatch();
   const loginMutation = useLogin();
   const navigate = useNavigate();
+  const { setToken } = useAuth();
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -54,7 +56,8 @@ const AuthLogin = () => {
     try {
       const status = await loginMutation.mutateAsync(credentials);
       // Login successful, perform any necessary actions
-      navigate('/dashboard');
+      setToken('Test Token');
+      navigate('/dashboard', { replace: true });
     } catch (error) {
       // Handle login error
     }
