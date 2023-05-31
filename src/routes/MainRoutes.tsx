@@ -17,7 +17,7 @@ const Typography = Loadable(lazy(() => import('~/pages/components-overview/Typog
 const Color = Loadable(lazy(() => import('~/pages/components-overview/Color')));
 const Shadow = Loadable(lazy(() => import('~/pages/components-overview/Shadow')));
 const AntIcons = Loadable(lazy(() => import('~/pages/components-overview/AntIcons')));
-const Status404 = Loadable(lazy(() => import('~/pages/Status404')));
+const Status404 = Loadable(lazy(() => import('~/pages/Status/Status404')));
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
