@@ -31,6 +31,7 @@ import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 import { LoginCredentials } from '~/api/authApi';
 import { useLogin } from '~/queries/authQueries';
 import { useDispatch } from 'react-redux';
+import { enableLoading } from '~/redux/reducers/loadSlice';
 
 // ============================|| FIREBASE - LOGIN ||============================ //
 
@@ -49,11 +50,13 @@ const AuthLogin = () => {
   };
 
   console.log(loginMutation);
-
+  dispatch(enableLoading(loginMutation.isLoading));
   const handleLogin = async (credentials: LoginCredentials) => {
     try {
       const status = await loginMutation.mutateAsync(credentials);
       // Login successful, perform any necessary actions
+      localStorage.setItem('token', status?.data.authToken);
+      console.log(status);
       navigate('/dashboard');
     } catch (error) {
       // Handle login error

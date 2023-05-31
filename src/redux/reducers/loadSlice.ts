@@ -14,7 +14,7 @@ const loadSlice = createSlice({
   initialState, // Initial state for the slice
   reducers: {
     // Define the 'enableLoading' reducer
-    enableLoading: (state: loadState, { payload }: PayloadAction<loadState>) => {
+    enableLoading: (state: loadState, { payload }: PayloadAction<any>) => {
       state.loading = payload.loading; // Update the 'loading' property of the state with the payload value
     },
   },
