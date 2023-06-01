@@ -7,11 +7,6 @@ import axios, {
 
 const apiClient: AxiosInstance = axios.create({
   baseURL: 'https://teamsproject.teamcomputers.com/wsbackend/v1/',
-  headers: {
-    'Content-type': 'application/json',
-    businessUnit: 'EUS,MPS',
-    'auth-token': localStorage.getItem('token'),
-  },
 });
 
 apiClient.interceptors.request.use(
@@ -22,7 +17,10 @@ apiClient.interceptors.request.use(
 
     // Add headers or other modifications to the config
     // config.headers = { ... };
-
+    if (localStorage.getItem('token')) {
+      config.headers['auth-token'] = localStorage.getItem('token');
+      config.headers['businessUnit'] = 'EUS,MPS';
+    }
     return config;
   },
   (error: any): Promise<any> => {

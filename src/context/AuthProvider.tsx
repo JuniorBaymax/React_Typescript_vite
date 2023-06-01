@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { apiClient } from '~/api/apiClient';
 
 interface AuthContextType {
   token: string | null;
@@ -15,7 +15,6 @@ interface AuthProviderProps {
 const AuthProvider: React.FC<AuthProviderProps> = ({ children }: any) => {
   // State to hold the authentication token
   const [token, setToken_] = useState<string | null>(localStorage.getItem('token'));
-
   // Function to set the authentication token
   const setToken = (newToken: string | null) => {
     setToken_(newToken);
@@ -23,10 +22,9 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }: any) => {
 
   useEffect(() => {
     if (token) {
-      axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
       localStorage.setItem('token', token);
     } else {
-      delete axios.defaults.headers.common['Authorization'];
+      delete apiClient.defaults.headers.common['auth-token'];
       localStorage.removeItem('token');
     }
   }, [token]);

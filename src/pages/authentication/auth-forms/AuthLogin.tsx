@@ -56,7 +56,7 @@ const AuthLogin = () => {
     try {
       const status = await loginMutation.mutateAsync(credentials);
       // Login successful, perform any necessary actions
-      setToken('Test Token');
+      setToken(status.data.authToken);
       navigate('/dashboard', { replace: true });
     } catch (error) {
       // Handle login error
@@ -136,13 +136,8 @@ const AuthLogin = () => {
               </Grid>
 
               <Grid item xs={12} sx={{ mt: -1 }}>
-                <Stack
-                  direction='row'
-                  justifyContent='space-between'
-                  alignItems='center'
-                  spacing={2}
-                >
-                  <FormControlLabel
+                <Stack direction='row' justifyContent='end' alignItems='center' spacing={2}>
+                  {/* <FormControlLabel
                     control={
                       <Checkbox
                         checked={checked}
@@ -153,8 +148,8 @@ const AuthLogin = () => {
                       />
                     }
                     label={<Typography variant='h6'>Keep me sign in</Typography>}
-                  />
-                  <Link variant='h6' component={RouterLink} to='' color='text.primary'>
+                  /> */}
+                  <Link underline='none' variant='h6' component={RouterLink} to='' color='primary'>
                     Forgot Password?
                   </Link>
                 </Stack>
@@ -179,14 +174,14 @@ const AuthLogin = () => {
                   </Button>
                 </AnimateButton>
               </Grid>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <Divider>
                   <Typography variant='caption'> Login with</Typography>
                 </Divider>
               </Grid>
               <Grid item xs={12}>
                 <FirebaseSocial />
-              </Grid>
+              </Grid> */}
             </Grid>
           </form>
         )}
