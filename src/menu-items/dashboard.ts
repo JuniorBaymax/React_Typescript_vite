@@ -28,7 +28,7 @@ const dashboard: MenuItem = {
       id: 'dashboard',
       title: 'Dashboard',
       type: 'item',
-      url: '/dashboard/default',
+      url: '/dashboard',
       icon: icons.DashboardOutlined,
       breadcrumbs: false,
     },

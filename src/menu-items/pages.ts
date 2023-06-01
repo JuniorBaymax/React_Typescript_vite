@@ -1,35 +1,35 @@
 // assets
-import { LoginOutlined, ProfileOutlined } from '@ant-design/icons';
+import { DatabaseOutlined, ProfileOutlined, FileTextOutlined } from '@ant-design/icons';
 import { MenuProps } from './types';
 
 // icons
 const icons = {
-  LoginOutlined,
+  DatabaseOutlined,
   ProfileOutlined,
+  FileTextOutlined,
 };
 
 // ==============================|| MENU ITEMS - EXTRA PAGES ||============================== //
 
 const pages: MenuProps = {
   id: 'authentication',
-  title: 'Authentication',
+  title: 'Invoices',
   type: 'group',
   children: [
     {
       id: 'login1',
-      title: 'Login',
+      title: 'Orders',
       type: 'item',
-      url: '/login',
-      icon: icons.LoginOutlined,
-      target: true,
+      url: '/orders',
+      icon: icons.DatabaseOutlined,
+      breadcrumbs: true,
     },
     {
-      id: 'register1',
-      title: 'Register',
+      id: 'invoices',
+      title: 'Invoice',
       type: 'item',
-      url: '/register',
-      icon: icons.ProfileOutlined,
-      target: true,
+      url: '/invoice',
+      icon: icons.FileTextOutlined,
     },
   ],
 };

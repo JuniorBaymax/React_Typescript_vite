@@ -14,10 +14,12 @@ const SamplePage = Loadable(lazy(() => import('~/pages/extra-pages/SamplePage'))
 
 // render - utilities
 const Typography = Loadable(lazy(() => import('~/pages/components-overview/Typography')));
-const Color = Loadable(lazy(() => import('~/pages/components-overview/Color')));
+
 const Shadow = Loadable(lazy(() => import('~/pages/components-overview/Shadow')));
-const AntIcons = Loadable(lazy(() => import('~/pages/components-overview/AntIcons')));
+
 const Status404 = Loadable(lazy(() => import('~/pages/Status/Status404')));
+const OrderTable = Loadable(lazy(() => import('~/pages/OrderTable')));
+const ManageOrder = Loadable(lazy(() => import('~/pages/ManageOrder')));
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
@@ -29,8 +31,8 @@ const MainRoutes = {
       element: <MainLayout />,
       children: [
         {
-          path: 'color',
-          element: <Color />,
+          path: 'orders',
+          element: <OrderTable />,
         },
         {
           path: 'dashboard',
@@ -49,8 +51,8 @@ const MainRoutes = {
           element: <Typography />,
         },
         {
-          path: 'icons/ant',
-          element: <AntIcons />,
+          path: 'orders/manage/:id',
+          element: <ManageOrder />,
         },
       ],
     },
