@@ -1,5 +1,5 @@
-import { forwardRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { forwardRef, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 // material-ui
@@ -42,6 +42,7 @@ const NavItem = ({ item, level }: NavItemProps) => {
   const dispatch = useDispatch();
   const menu = useSelector((state: RootState) => state.menu);
   const { drawerOpen, openItem } = menu;
+  const location = useLocation();
 
   let itemTarget = '_self';
   if (item.target) {
@@ -69,11 +70,11 @@ const NavItem = ({ item, level }: NavItemProps) => {
     false
   );
 
-  const isSelected = openItem.findIndex(id => id === item.id) > -1;
+  const isSelected = location.pathname.includes(item.url);
 
   // active menu item on page load
   useEffect(() => {
-    const currentIndex = document.location.pathname
+    const currentIndex = location.pathname
       .toString()
       .split('/')
       .findIndex(id => id === item.id);
