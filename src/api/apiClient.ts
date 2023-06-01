@@ -25,7 +25,6 @@ apiClient.interceptors.request.use(
   },
   (error: any): Promise<any> => {
     // Handle request error
-
     return Promise.reject(error);
   }
 );
@@ -43,7 +42,16 @@ apiClient.interceptors.response.use(
   },
   (error: any): Promise<any> => {
     // Handle response error
-
+    if (
+      error.config.url !== 'user/login' &&
+      error.response?.status === 401 &&
+      !error.config._retry
+    ) {
+      // Access token was expired
+      error.config._retry = false;
+      // Rest of the code logic
+      window.location.href = '/session-expired';
+    }
     return Promise.reject(error);
   }
 );

@@ -20,7 +20,6 @@ const MainContent = styled(Box)(
     height: 100%;
     display: flex;
     flex: 1;
-    overflow: auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -47,7 +46,7 @@ function Status404() {
       </Helmet> */}
       <MainContent>
         <Container maxWidth='md'>
-          <Box textAlign='center'>
+          <Box textAlign='center' mt={3}>
             <img alt='404' height={180} src={img404} />
             <Typography variant='h2' sx={{ my: 2 }}>
               The page you were looking for doesnt exist.
