@@ -105,7 +105,7 @@ const Breadcrumbs: FC<BreadcrumbsProps & MainCardProps> = ({
               <MuiBreadcrumbs aria-label='breadcrumb'>
                 <Typography
                   component={Link}
-                  to='/'
+                  to='/dashboard'
                   color='textSecondary'
                   variant='h6'
                   sx={{ textDecoration: 'none' }}
