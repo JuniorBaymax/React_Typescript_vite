@@ -1,6 +1,13 @@
-import { useMutation } from '@tanstack/react-query';
-import { getAllOrders } from '~/api/orderApi';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import { getAllOrders, getOrderDetails } from '~/api/orderApi';
+import { orderDetailsType } from '~/types/orderTypes';
 
-export function useOrders() {
-  return useMutation((postId: any) => getAllOrders(postId));
-}
+const useOrdersQuery = (payload: any) => {
+  return useQuery(['orders', payload], () => getAllOrders(payload));
+};
+
+export const useOrderDetailsQuery = (payload: orderDetailsType) => {
+  return useQuery(['orderItem', payload], () => getOrderDetails(payload));
+};
+
+export default useOrdersQuery;

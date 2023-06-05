@@ -36,6 +36,7 @@ const MainRoutes = {
         },
         {
           path: 'dashboard',
+          index: true,
           element: <DashboardDefault />,
         },
         {
