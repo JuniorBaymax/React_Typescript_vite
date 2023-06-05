@@ -36,6 +36,7 @@
     ]
   },
   "dependencies": {
+    "@ant-design/icons": "^5.1.4",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.11",
