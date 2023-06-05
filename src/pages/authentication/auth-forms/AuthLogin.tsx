@@ -32,6 +32,8 @@ import { LoginCredentials } from '~/api/authApi';
 import { useLogin } from '~/queries/authQueries';
 import { useDispatch } from 'react-redux';
 import { useAuth } from '~/context/AuthProvider';
+import { message } from 'antd';
+import { AxiosError } from 'axios';
 
 // ============================|| FIREBASE - LOGIN ||============================ //
 
@@ -42,6 +44,8 @@ const AuthLogin = () => {
   const loginMutation = useLogin();
   const navigate = useNavigate();
   const { setToken } = useAuth();
+  const [messageApi, contextHolder] = message.useMessage();
+
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -58,12 +62,19 @@ const AuthLogin = () => {
       // Login successful, perform any necessary actions
       setToken(status.data.authToken);
       navigate('/dashboard', { replace: true });
-    } catch (error) {
+    } catch (error: any) {
       // Handle login error
+      messageApi.open({
+        type: 'error',
+        content: error.response.data.message,
+      });
     }
   };
+
+  // const info = () => {};
   return (
     <>
+      {contextHolder}
       <Formik
         initialValues={{
           email: '',
@@ -121,7 +132,11 @@ const AuthLogin = () => {
                           edge='end'
                           size='large'
                         >
-                          {showPassword ? <EyeOutlined /> : <EyeInvisibleOutlined />}
+                          {showPassword ? (
+                            <EyeOutlined rev='error' />
+                          ) : (
+                            <EyeInvisibleOutlined rev='error' />
+                          )}
                         </IconButton>
                       </InputAdornment>
                     }
